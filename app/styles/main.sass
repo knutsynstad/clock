@@ -1,0 +1,50 @@
+// Definitions
+$background: #fafafa
+
+// Size
+$size: 400px
+
+// Clock Colors
+$dark-gray: #D2D4DF
+$black: #06060A
+$white: #F3F3F8
+$yellow: #D3C84F
+
+
+body
+	background: $background
+	font-family: 'Montserrat', sans-serif
+	color: darken($background,20%)
+	display: flex
+	align-items: center
+	justify-content: center
+	min-height: 100vh
+
+#clock
+	width: $size
+	height: $size
+	box-shadow: 0px 0px ($size / 8) darken($background,10%)
+	border-radius: $size / 2
+
+	#face, #pin
+		fill: $black
+
+	#minute, #hour
+		fill: white
+
+	#second
+		fill: $yellow
+
+	#markers, #digits, #braun
+		fill: $dark-gray
+
+.description
+	margin: 0
+	text-transform: uppercase
+	line-height: 1.4
+	max-width: 300px
+	font-size: 12px
+	font-weight: 400
+	position: fixed
+	left: 50px
+	bottom: 50px
