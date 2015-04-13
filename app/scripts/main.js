@@ -4,8 +4,8 @@ console.log('\'Allo \'Allo!');
 
 
 var currentSecond = 1;
-var currentMinute = 55;
-var currentHour = 1;
+var currentMinute = 51;
+var currentHour = 2;
 
 var second = document.getElementById('second');
 var minute = document.getElementById('minute');
@@ -37,6 +37,11 @@ function addHour() {
 	currentHour += 1;
 }
 
+function setTime(hr, min, sec) {
+	second.setAttribute("transform", "rotate(" + (sec * 6) + " 50 50)");
+	minute.setAttribute("transform", "rotate(" + (min * 6) + " 50 50)");
+	hour.setAttribute("transform", "rotate(" + (hr * 30) + " 50 50)");
+}
 
-
-setInterval(addSecond, 10);
+setTime(currentHour, currentMinute, currentSecond);
+setInterval(addSecond, 250);
