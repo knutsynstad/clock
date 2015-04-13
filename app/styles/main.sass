@@ -1,10 +1,8 @@
-// Definitions
-$background: #fafafa
-
 // Size
 $size: 400px
 
-// Clock Colors
+// Colors
+$background: #fafafa
 $dark-gray: #D2D4DF
 $black: #06060A
 $white: #F3F3F8
@@ -22,27 +20,22 @@ body
 
 #clock
 	width: $size
-	height: $size
-	box-shadow: 0px 0px ($size / 8) darken($background,10%)
-	border-radius: $size / 2
-
+	box-shadow: 0px 0px 50px darken($background,20%)
+	border-radius: 50%
 	#face, #pin
 		fill: $black
-
 	#minute, #hour
-		fill: white
-
+		fill: $white
 	#second
 		fill: $yellow
-
 	#markers, #digits, #braun
 		fill: $dark-gray
 
-.description
+#description
 	margin: 0
 	text-transform: uppercase
 	line-height: 1.4
-	max-width: 300px
+	max-width: 320px
 	font-size: 12px
 	font-weight: 400
 	position: fixed

@@ -1,47 +1,44 @@
-console.log('\'Allo \'Allo!');
+// Calculate Clock Size
+function setSize() {
+	var clock = document.getElementById('clock');
+	var w = window.innerWidth;
+	var h = window.innerHeight;
 
+	if (w > h) {
+		clock.style.width = (h / 2) + 'px';
+	} else {
+		clock.style.width = (w / 2) + 'px';
+	}
+}
 
+// Set Clock Size
+setSize();
 
+// Resize Clock if Window Changes Size
+window.onresize = function() { setSize(); };
 
-var currentSecond = 1;
-var currentMinute = 51;
-var currentHour = 2;
-
+// Select Clock Arms
 var second = document.getElementById('second');
 var minute = document.getElementById('minute');
 var hour = document.getElementById('hour');
 
-function addSecond() {
-	if (currentSecond > 60) {
-		currentSecond = 1;
-		addMinute();
-	}
-	second.setAttribute("transform", "rotate(" + (currentSecond * 6) + " 50 50)");
-	currentSecond += 1;
+// Get Current Time
+function getTime() {
+	var x = new Date(); 
+	var h = x.getHours(); 
+	if (h >= 13) { h = h - 12; }
+	return [h, x.getMinutes(), x.getSeconds()];
 }
 
-function addMinute() {
-	if (currentMinute > 60) {
-		currentMinute = 1;
-		addHour();
-	}
-	minute.setAttribute("transform", "rotate(" + (currentMinute * 6) + " 50 50)");
-	currentMinute += 1;
+// Set New Time
+function setTime(time) {
+	second.setAttribute("transform", "rotate(" + (time[2] * 6) + " 50 50)");
+	minute.setAttribute("transform", "rotate(" + ((time[1] * 6) + ((time[2] * 6) / 60)) + " 50 50)");
+	hour.setAttribute("transform", "rotate(" + ((time[0] * 30) + ((time[1] * 6) / 12)) + " 50 50)");
 }
 
-function addHour() {
-	if (currentHour > 12) {
-		currentHour = 1;
-	}
-	hour.setAttribute("transform", "rotate(" + (currentHour * 30) + " 50 50)");
-	currentHour += 1;
-}
+// Set Current Time
+setTime(getTime());
 
-function setTime(hr, min, sec) {
-	second.setAttribute("transform", "rotate(" + (sec * 6) + " 50 50)");
-	minute.setAttribute("transform", "rotate(" + (min * 6) + " 50 50)");
-	hour.setAttribute("transform", "rotate(" + (hr * 30) + " 50 50)");
-}
-
-setTime(currentHour, currentMinute, currentSecond);
-setInterval(addSecond, 250);
+// Set Subsequent Updates
+setInterval(function() { setTime(getTime()); }, 1000);

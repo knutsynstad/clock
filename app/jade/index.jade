@@ -3,8 +3,8 @@ html(lang="en")
 	head
 		title SVG/JS Clock
 		meta(charset='UTF-8')
-		meta(content='SVG Clock based on Dieter Rams\' classic watch design for Braun in the 1970s.' class name='description')
-		meta(content='Knut Synstad' name='author')
+		meta(content='SVG/JS Clock based on Dieter Rams\' classic watch design for Braun in the 1970s.' class name='description')
+		meta(content='Knut M. Synstad' name='author')
 		meta(content='3 days' name='revisit-after')
 		meta(name='viewport' content='width=device-width, initial-scale=1')
 		//- link(rel='shortcut icon' href='/favicon.ico')
@@ -12,7 +12,7 @@ html(lang="en")
 		link(href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css')
 
 	body
-		p.description SVG Clock based on Dieter Rams' classic watch design for Braun in the 1970s.
+		p#description SVG/JS Clock based on Dieter Rams' classic watch design for Braun in the 1970s.
 		svg#clock(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewbox='0 0 100 100')
 			path#face(d='M60.395,1.103C33.388-4.638,6.844,12.604,1.103,39.609C-4.637,66.613,12.6,93.158,39.605,98.896c27.009,5.741,53.551-11.496,59.291-38.5C104.638,33.39,87.401,6.843,60.395,1.103z')
 			g#markers
@@ -106,6 +106,5 @@ html(lang="en")
 				rect#minute(x='49' y='7.359' width='2' height='42.65')
 				path#second(d='M51.752,57.76v-5.016c0.193-0.125,0.378-0.268,0.547-0.438c1.27-1.268,1.27-3.327,0-4.595c-0.506-0.507-1.14-0.802-1.797-0.904V7.259h-1v39.548c-0.659,0.103-1.292,0.397-1.799,0.904c-1.27,1.269-1.27,3.328,0,4.595c0.17,0.17,0.354,0.313,0.549,0.438v5.016c0,0.553,1.25,0.75,1.75,1C50.5,58.51,51.752,58.313,51.752,57.76z')
 				circle#pin(cx='50' cy='50' r='0.325')
-
 
 		script(src='scripts/main.js')
