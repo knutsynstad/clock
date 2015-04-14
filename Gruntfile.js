@@ -67,10 +67,6 @@ module.exports = function(grunt) {
 			jade: {
 				files: ['<%= folders.app %>/jade/**/*.jade'],
 				tasks: ['jade']
-			},
-			image: {
-				files: ['<%= folders.app %>/images/**/*.jpg'],
-				tasks: ['copy:images']
 			}
 		},
 		clean: {
@@ -81,14 +77,6 @@ module.exports = function(grunt) {
 			dist: ['<%= folders.dist %>']
 		},
 		copy: {
-			images : {
-				files: [{
-					expand: true,
-					cwd: '<%= folders.app %>/images/',
-					src: ['**'],
-					dest: '<%= folders.tmp %>/images/'},
-				],	
-			},
 			build: {
 				files: [{
 					expand: true,
