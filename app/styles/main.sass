@@ -1,27 +1,24 @@
-// Size
-$size: 400px
+// Typography
+@import url(//fonts.googleapis.com/css?family=Open+Sans)
+$fontstack: 'Open Sans', sans-serif
 
 // Colors
-$background: #fafafa
+$background: white
 $dark-gray: #D2D4DF
 $black: #06060A
 $white: #F3F3F8
 $yellow: #D3C84F
 
-
 body
 	background: $background
-	font-family: 'Montserrat', sans-serif
-	color: darken($background,20%)
-	display: flex
-	align-items: center
-	justify-content: center
-	min-height: 100vh
+	color: $yellow
 
 #clock
-	width: $size
-	box-shadow: 0px 0px 50px darken($background,20%)
-	border-radius: 50%
+	position: fixed
+	width: 100px
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
 	#face, #pin
 		fill: $black
 	#minute, #hour
@@ -32,12 +29,16 @@ body
 		fill: $dark-gray
 
 #description
-	margin: 0
-	text-transform: uppercase
-	line-height: 1.4
-	max-width: 320px
-	font-size: 12px
-	font-weight: 400
 	position: fixed
 	left: 50px
 	bottom: 50px
+	margin: 0
+	max-width: 300px
+	padding-right: 50px
+	text-transform: uppercase
+	line-height: 1.4
+	font:
+		family: $fontstack
+		size: 12px
+		weight: 400
+	-webkit-font-smoothing: antialiased
